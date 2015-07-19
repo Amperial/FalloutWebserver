@@ -1,0 +1,31 @@
+html {
+    overflow-y: scroll;
+}
+
+#wrapper {
+    min-height: 100%;
+    margin-bottom: -86px;
+    position:relative;
+}
+
+#footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 86px;
+    position: relative;
+}
+
+.clearfooter {
+    height: 86px;
+    clear: both;
+}
+
+.wide-orbit img {
+    width: 100%;
+    height: auto;
+}
+
+.lore-date {
+    color: #8000ff;
+}

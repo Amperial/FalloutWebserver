@@ -1,0 +1,9 @@
+name: FalloutWebserver
+version: 0.0
+description: Web server for the Fallout Bukkit plugin.
+author: ampayne2
+main: ninja.amp.falloutwebserver.FalloutWebserver
+depend: [Fallout]
+commands:
+  falloutwebserver:
+    aliases: [ fowebserver, falloutweb, foweb, fows, fow ]
