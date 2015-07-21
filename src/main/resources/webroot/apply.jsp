@@ -12,8 +12,10 @@
 </head>
 <body>
 <%@include file="WEB-INF/header.jsp"%>
-<div id="content">
-    Do not use your character's back story to give yourself powers, abilities, items, and things that are OP
+<div id="content" class="row" style="background: #D8DBE2">
+    <div class="small-12 small-centered columns">
+        Do not use your character's back story to give yourself powers, abilities, items, and things that are OP
+    </div>
 </div>
 <%@include file="WEB-INF/footer.jsp"%>
 <script src="js/vendor/jquery.js"></script>

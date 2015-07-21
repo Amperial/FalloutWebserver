@@ -12,8 +12,10 @@
 </head>
 <body>
 <%@include file="WEB-INF/header.jsp"%>
-<div id="content">
-    
+<div id="content" class="row" style="background: #D8DBE2">
+    <div class="small-12 small-centered columns">
+        Profile of ${param["character"]}.
+    </div>
 </div>
 <%@include file="WEB-INF/footer.jsp"%>
 <script src="js/vendor/jquery.js"></script>

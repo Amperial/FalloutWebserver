@@ -12,21 +12,21 @@
 </head>
 <body>
 <%@include file="WEB-INF/header.jsp"%>
-<div id="content">
-    <ul class="wide-orbit" data-orbit>
-        <li><img src="img/banner_rules_1.png"></li>
-        <li><img src="img/banner_rules_2.png"></li>
-        <li><img src="img/banner_rules_3.png"></li>
-    </ul>
+<div id="content" class="row" style="background: #D8DBE2">
+    <div class="small-12 small-centered columns">
+        <ul data-orbit>
+            <li><img src="img/banner_rules_1.png"></li>
+            <li><img src="img/banner_rules_2.png"></li>
+            <li><img src="img/banner_rules_3.png"></li>
+        </ul>
 
-    <div class="row">
         <ul class="tabs vertical" data-tab>
             <li class="tab-title active"><a href="#globalrules">Global</a></li>
             <li class="tab-title"><a href="#roleplayrules">Roleplay</a></li>
             <li class="tab-title"><a href="#stealingrules">Stealing</a></li>
             <li class="tab-title"><a href="#consequences">Consequences</a></li>
         </ul>
-        <div class="tabs-content">
+        <div class="tabs-content" style="background: #EAEAEA">
             <div class="content active" id="globalrules">
                 <div class="small-3 columns"></div>
                 <div class="small-9 columns">
