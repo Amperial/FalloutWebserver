@@ -2,39 +2,74 @@ html {
     overflow-y: scroll;
 }
 
+body, .button {
+    font-family: 'Open Sans', arial, helvetica, sans-serif;
+}
+body {
+    background: url("../img/pattern_background.png") repeat fixed;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+#content {
+    background: url("../img/pattern_content.jpg") repeat fixed;
+}
+
+/* Sticky footer */
 #wrapper {
-    background: #EAEAEA;
     min-height: 100%;
-    margin-bottom: -86px;
+    margin-bottom: -93px;
     position:relative;
 }
-
-hr {
-    background: #333333;
-    height: 1px;
-}
-
-.tabs .tab-title > a {
-    background: #EAEAEA;
-}
-
-.tabs .tab-title.active > a {
-    background: #D8DBE2;
-}
-
 .clearfooter {
-    height: 86px;
+    height: 93px;
     clear: both;
 }
-
 #footer {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 86px;
+    height: 93px;
     position: relative;
 }
 
+/* hr and hr with text */
+hr {
+    color: #FFFFFF;
+    height: 1px;
+}
+.strike {
+    overflow: hidden;
+    text-align: center;
+}
+.strike:before,
+.strike:after {
+    background-color: #FFFFFF;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+.strike:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+.strike:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+/* Tab background colors */
+.tabs .tab-title > a {
+    background: #A5A5A5;
+}
+.tabs .tab-title.active > a {
+    background: #CECCCC;
+}
+
+/* Lore page date colors */
 .lore-date {
     color: #8000ff;
 }

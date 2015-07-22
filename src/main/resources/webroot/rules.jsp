@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
     <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
 <%@include file="WEB-INF/header.jsp"%>
-<div id="content" class="row" style="background: #D8DBE2">
+<ul data-orbit>
+    <li><img src="img/banner_rules_1.png"></li>
+    <li><img src="img/banner_rules_2.png"></li>
+    <li><img src="img/banner_rules_3.png"></li>
+</ul>
+<div id="content" class="row">
+    <br>
     <div class="small-12 small-centered columns">
-        <ul data-orbit>
-            <li><img src="img/banner_rules_1.png"></li>
-            <li><img src="img/banner_rules_2.png"></li>
-            <li><img src="img/banner_rules_3.png"></li>
-        </ul>
 
         <ul class="tabs vertical" data-tab>
             <li class="tab-title active"><a href="#globalrules">Global</a></li>
@@ -26,7 +28,7 @@
             <li class="tab-title"><a href="#stealingrules">Stealing</a></li>
             <li class="tab-title"><a href="#consequences">Consequences</a></li>
         </ul>
-        <div class="tabs-content" style="background: #EAEAEA">
+        <div class="tabs-content" style="background: #A5A5A5">
             <div class="content active" id="globalrules">
                 <div class="small-3 columns"></div>
                 <div class="small-9 columns">

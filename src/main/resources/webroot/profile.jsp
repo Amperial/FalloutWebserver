@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
     <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
 <%@include file="WEB-INF/header.jsp"%>
-<div id="content" class="row" style="background: #D8DBE2">
+<br>
+<div id="content" class="row">
+    <br>
     <div class="small-12 small-centered columns">
         Profile of ${param["character"]}.
     </div>
+    <br>
 </div>
 <%@include file="WEB-INF/footer.jsp"%>
 <script src="js/vendor/jquery.js"></script>

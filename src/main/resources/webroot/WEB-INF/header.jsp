@@ -34,7 +34,7 @@
                     <form class="has-form" action="profile.jsp" method="get">
                         <div class="row collapse">
                             <div class="large-8 small-9 columns">
-                                <input type="text" name="character" placeholder="Find Character" required pattern="[a-zA-Z0-9]+" maxlength="20"
+                                <input type="text" name="character" placeholder="Find Character" required pattern="([A-Za-z]+_)?[A-Za-z]+" maxlength="20"
                                        oninput="setCustomValidity('')" oninvalid="setCustomValidity('Please enter up to 20 Alphanumeric characters')">
                             </div>
                             <div class="large-4 small-3 columns">

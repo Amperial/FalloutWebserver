@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
     <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
 <%@include file="WEB-INF/header.jsp"%>
-<div id="content" class="row" style="background: #D8DBE2">
+<br>
+<div id="content" class="row">
+    <br>
     <div class="small-12 small-centered columns">
-        <h3>Lore Pre-Start of Map</h3>
+        <h3 style="color: #FFFFFF">Lore Pre-Start of Map</h3>
     
         <h4 class="lore-date subheader">2077</h4><br>
         <ul class="circle">
@@ -80,7 +83,7 @@
                 called vertibirds by the Enclave. (BoS in Michigan stand by for further orders)</li>
         </ul>
     
-        <h3>Lore Post-Start of Map</h3>
+        <h3 style="color: #FFFFFF">Lore Post-Start of Map</h3>
     
         <h4 class="lore-date subheader">2177</h4><br>
         <ul class="circle">
