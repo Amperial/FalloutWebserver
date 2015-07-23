@@ -12,20 +12,28 @@
     <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
-<%@include file="WEB-INF/header.jsp"%>
-<br>
-<div class="row content-main">
+<div id="wrapper">
     <br>
-    <div class="small-12 small-centered columns">
-        <div class="small-12 small-centered columns content-inner">
-            <br>
-            Do not use your character's back story to give yourself powers, abilities, items, and things that are OP
-            <br><br>
+
+    <%@include file="WEB-INF/header.jsp"%>
+
+    <div class="row content-main">
+        <br>
+        <div class="small-12 small-centered columns">
+            <div class="small-12 small-centered columns content-inner">
+                <br>
+                Do not use your character's back story to give yourself powers, abilities, items, and things that are OP
+                <br><br>
+            </div>
         </div>
+        <br>
     </div>
     <br>
+    <div class="clearfooter"></div>
 </div>
+
 <%@include file="WEB-INF/footer.jsp"%>
+
 <script src="js/vendor/jquery.js"></script>
 <script src="js/foundation.min.js"></script>
 <script>

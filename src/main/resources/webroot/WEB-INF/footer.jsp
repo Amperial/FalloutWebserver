@@ -1,7 +1,3 @@
-
-<br>
-<div class="clearfooter"></div>
-</div>
 <div id="footer">
     <footer class="row content-main">
         <div class="large-12 columns">

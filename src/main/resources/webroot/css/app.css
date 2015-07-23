@@ -10,7 +10,32 @@ body {
     font-size: 14px;
     color: #E8EEF2;
 }
+.row, .contain-to-grid.sticky .top-bar {
+    max-width: 1170px;
+}
 
+.top-bar, .top-bar-section ul li,
+.top-bar-section .has-form,
+.top-bar-section ul li:hover:not(.has-form) > a,
+.top-bar-section li:not(.has-form) a:not(.button),
+.top-bar-section .dropdown,
+.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button),
+.contain-to-grid.sticky {
+    background: #43AC6A;
+}
+.top-bar-section li:not(.has-form) a:hover:not(.button),
+.top-bar-section .dropdown li:hover:not(.has-form):not(.active) > a:not(.button) {
+    background: #43B977;
+}
+.top-bar-section > ul > .divider {
+    border-right-color: #E8EEF2
+}
+.top-bar-section .button, .top-bar-section .button:focus {
+    background: #333333;
+}
+.top-bar-section .button:hover {
+    background: #222222;
+}
 
 .content-main {
     background: #333333;
