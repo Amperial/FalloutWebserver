@@ -14,10 +14,14 @@
 <body>
 <%@include file="WEB-INF/header.jsp"%>
 <br>
-<div id="content" class="row">
+<div class="row content-main">
     <br>
     <div class="small-12 small-centered columns">
-        Profile of ${param["character"]}.
+        <div class="small-12 small-centered columns content-inner">
+            <br>
+            Profile of ${param["character"]}.
+            <br><br>
+        </div>
     </div>
     <br>
 </div>

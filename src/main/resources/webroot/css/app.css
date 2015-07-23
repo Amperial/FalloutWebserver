@@ -8,11 +8,21 @@ body, .button {
 body {
     background: url("../img/pattern_background.png") repeat fixed;
     font-size: 14px;
-    color: #FFFFFF;
+    color: #E8EEF2;
 }
 
-#content {
+
+.content-main {
+    background: #333333;
+}
+.content-inner {
     background: url("../img/pattern_content.jpg") repeat fixed;
+}
+.content-inner > ul {
+    font-size: 14px;
+}
+.content-inner > ul li {
+    font-size: 14px;
 }
 
 /* Sticky footer */
@@ -35,16 +45,17 @@ body {
 
 /* hr and hr with text */
 hr {
-    color: #FFFFFF;
+    color: #E8EEF2;
     height: 1px;
 }
 .strike {
+    color: #E8EEF2;
     overflow: hidden;
     text-align: center;
 }
 .strike:before,
 .strike:after {
-    background-color: #FFFFFF;
+    background-color: #E8EEF2;
     content: "";
     display: inline-block;
     height: 1px;
@@ -61,15 +72,31 @@ hr {
     margin-right: -50%;
 }
 
-/* Tab background colors */
+/* Tab content */
 .tabs .tab-title > a {
-    background: #A5A5A5;
+    background: #333333;
+    color: #E8EEF2;
+}
+.tabs .tab-title > a:hover {
+    color: #222222;
 }
 .tabs .tab-title.active > a {
     background: #CECCCC;
 }
+.tabs-content .content.active {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+/* Button focus colors */
+button:focus, .button:focus {
+    background-color: #008CBA;
+}
+button:hover, .button:hover {
+    background-color: #007095
+}
 
 /* Lore page date colors */
 .lore-date {
-    color: #8000ff;
+    color: #008CBA;
 }

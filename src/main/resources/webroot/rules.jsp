@@ -18,23 +18,22 @@
     <li><img src="img/banner_rules_2.png"></li>
     <li><img src="img/banner_rules_3.png"></li>
 </ul>
-<div id="content" class="row">
+<div class="row content-main">
     <br>
     <div class="small-12 small-centered columns">
-
         <ul class="tabs vertical" data-tab>
             <li class="tab-title active"><a href="#globalrules">Global</a></li>
             <li class="tab-title"><a href="#roleplayrules">Roleplay</a></li>
             <li class="tab-title"><a href="#stealingrules">Stealing</a></li>
             <li class="tab-title"><a href="#consequences">Consequences</a></li>
         </ul>
-        <div class="tabs-content" style="background: #A5A5A5">
+        <div class="tabs-content">
             <div class="content active" id="globalrules">
                 <div class="small-3 columns"></div>
-                <div class="small-9 columns">
-                    <p>These are the general server rules.<br>
-                        Remember, staff have the ultimate say in disputes and roleplay.
-                    </p>
+                <div class="small-9 columns content-inner"><br>
+                    These are the general server rules.<br>
+                    Remember, staff have the ultimate say in disputes and roleplay.<br>
+                    <br>
                     <ul class="circle">
                         <li>Chat Rules
                             <ul>
@@ -58,7 +57,7 @@
             </div>
             <div class="content" id="roleplayrules">
                 <div class="small-3 columns"></div>
-                <div class="small-9 columns">
+                <div class="small-9 columns content-inner"><br>
                     <ul class="circle">
                         <li>A roleplay rule.</li>
                     </ul>
@@ -66,8 +65,8 @@
             </div>
             <div class="content" id="stealingrules">
                 <div class="small-3 columns"></div>
-                <div class="small-9 columns">
-                    <p>This is how 2 steal duh lols:</p>
+                <div class="small-9 columns content-inner"><br>
+                    This is how 2 steal duh lols:
                     <ul class="circle">
                         <li>Robbing a player is only allowed if the player is online.</li>
                         <li>Players that have been offline for over a month can be robbed.</li>
@@ -78,9 +77,9 @@
             </div>
             <div class="content" id="consequences">
                 <div class="small-3 columns"></div>
-                <div class="small-9 columns">
-                    <p>These are the consequences for breaking rules</p>
-                </div>
+                <div class="small-9 columns content-inner"><br>
+                    These are the consequences for breaking rules<br>
+                <br></div>
             </div>
         </div>
     </div>

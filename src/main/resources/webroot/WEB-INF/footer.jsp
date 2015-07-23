@@ -3,7 +3,7 @@
 <div class="clearfooter"></div>
 </div>
 <div id="footer">
-    <footer class="row" style="background: url('img/pattern_content.jpg') repeat fixed">
+    <footer class="row content-main">
         <div class="large-12 columns">
             <hr/>
             &#169; Copyright 2015 <a href="http://github.com/ampayne2/">Austin Payne</a>.

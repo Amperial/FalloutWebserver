@@ -14,10 +14,14 @@
 <body>
 <%@include file="WEB-INF/header.jsp"%>
 <br>
-<div id="content" class="row">
+<div class="row content-main">
     <br>
     <div class="small-12 small-centered columns">
-        Do not use your character's back story to give yourself powers, abilities, items, and things that are OP
+        <div class="small-12 small-centered columns content-inner">
+            <br>
+            Do not use your character's back story to give yourself powers, abilities, items, and things that are OP
+            <br><br>
+        </div>
     </div>
     <br>
 </div>
