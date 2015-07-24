@@ -6,3 +6,5 @@ configversion: '0.0'
 webserverport: 80
 # URL players will be linked to when requested
 webserverurl: 'http://localhost:80/'
+# The voting reward of the day
+votereward: 'a hug from amp'

@@ -26,7 +26,10 @@ import ninja.amp.fallout.message.Message;
  * @author Austin Payne
  */
 public enum FOWSMessage implements Message {
-    RELOAD("Reload", "Reloaded %s.");
+    RELOAD("Reload", "Reloaded %s."),
+
+    VOTEREWARD_LIST("VoteReward.List", "Today's voting reward is %s!"),
+    VOTEREWARD_SET("VoteReward.Set", "Set today's voting reward to %s.");
 
     private final String path;
     private final String defaultMessage;

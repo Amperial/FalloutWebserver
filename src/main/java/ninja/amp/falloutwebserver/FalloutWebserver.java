@@ -29,6 +29,8 @@ import ninja.amp.fallout.config.ConfigManager;
 import ninja.amp.fallout.message.Messenger;
 import ninja.amp.falloutwebserver.command.AboutCommand;
 import ninja.amp.falloutwebserver.command.ReloadCommand;
+import ninja.amp.falloutwebserver.command.vote.SetVoteReward;
+import ninja.amp.falloutwebserver.command.vote.VoteReward;
 import ninja.amp.falloutwebserver.config.FOWSConfig;
 import ninja.amp.falloutwebserver.server.ServerManager;
 import org.bukkit.Bukkit;
@@ -62,7 +64,9 @@ public class FalloutWebserver extends JavaPlugin implements FalloutCore, Listene
         // Create fallout webserver command tree
         CommandGroup falloutweb = new CommandGroup(this, "falloutwebserver")
                 .addChildCommand(new AboutCommand(this))
-                .addChildCommand(new ReloadCommand(this));
+                .addChildCommand(new ReloadCommand(this))
+                .addChildCommand(new VoteReward(this))
+                .addChildCommand(new SetVoteReward(this));
 
         // Add fallout webserver command tree to command controller
         fallout.getCommandController().addCommand(falloutweb);
@@ -81,6 +85,7 @@ public class FalloutWebserver extends JavaPlugin implements FalloutCore, Listene
             }
         }
         serverManager.stop();
+        serverManager = null;
         fallout = null;
     }
 
@@ -117,6 +122,10 @@ public class FalloutWebserver extends JavaPlugin implements FalloutCore, Listene
     @Override
     public FactionManager getFactionManager() {
         return fallout.getFactionManager();
+    }
+
+    public ServerManager getServerManager() {
+        return serverManager;
     }
 
 }

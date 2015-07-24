@@ -3,24 +3,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fallout Wasteland Legends: Lore</title>
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
+    <title>Fallout Wasteland Legends: Wiki</title>
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link rel="stylesheet" href="../css/app.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
-    <script src="js/vendor/modernizr.js"></script>
+    <script src="../js/vendor/modernizr.js"></script>
 </head>
 <body>
 <div id="wrapper">
     <br>
 
-    <%@include file="WEB-INF/header.jsp"%>
+    <%@include file="../WEB-INF/header.jsp"%>
 
     <div class="row content-main">
         <br>
         <div class="small-12 small-centered columns">
-            <h3 style="color: #E8EEF2">Lore Pre-Start of Map</h3>
+            <ul class="breadcrumbs">
+                <li><a href="wiki.jsp">Wiki</a></li>
+                <li class="current"><a href="#">Lore</a></li>
+            </ul>
+
+            <h3>Lore Pre-Start of Map</h3>
     
             <div class="small-12 small-centered columns content-inner">
                 <br>
@@ -91,7 +96,7 @@
             </div>
             <br>
         
-            <h3 style="color: #E8EEF2">Lore Post-Start of Map</h3>
+            <h3>Lore Post-Start of Map</h3>
     
             <div class="small-12 small-centered columns content-inner">
                 <br><h4 class="lore-date subheader">2177</h4>
@@ -260,10 +265,10 @@
     <div class="clearfooter"></div>
 </div>
 
-<%@include file="WEB-INF/footer.jsp"%>
+<%@include file="../WEB-INF/footer.jsp"%>
 
-<script src="js/vendor/jquery.js"></script>
-<script src="js/foundation.min.js"></script>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/foundation.min.js"></script>
 <script>
     $(document).foundation();
 </script>

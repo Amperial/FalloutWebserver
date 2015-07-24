@@ -8,10 +8,13 @@ body, .button {
 body {
     background: url("../img/pattern_background.png") repeat fixed;
     font-size: 14px;
-    color: #E8EEF2;
 }
 .row, .contain-to-grid.sticky .top-bar {
     max-width: 1170px;
+}
+
+body, hr, .strike, .tabs .tab-title > a, h1, h2, h3, h4, h5 {
+    color: #E8EEF2;
 }
 
 .top-bar, .top-bar-section ul li,
@@ -70,11 +73,9 @@ body {
 
 /* hr and hr with text */
 hr {
-    color: #E8EEF2;
     height: 1px;
 }
 .strike {
-    color: #E8EEF2;
     overflow: hidden;
     text-align: center;
 }
@@ -97,10 +98,17 @@ hr {
     margin-right: -50%;
 }
 
+.image-center {
+    display: block;
+    margin: 0 auto;
+}
+.text-center li {
+    text-align: center;
+}
+
 /* Tab content */
 .tabs .tab-title > a {
     background: #333333;
-    color: #E8EEF2;
 }
 .tabs .tab-title > a:hover {
     color: #222222;
@@ -124,4 +132,16 @@ button:hover, .button:hover {
 /* Lore page date colors */
 .lore-date {
     color: #008CBA;
+}
+
+span.text-circle {
+    background: #008CBA;
+    border-radius: 1.5em;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 3.0em;
+    text-align: center;
+    vertical-align: middle;
+    width: 3.0em;
 }

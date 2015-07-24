@@ -69,6 +69,11 @@ public class ServerManager {
         context.setClassLoader(jspClassLoader);
 
         context.addServlet(new ServletHolder("default", DefaultServlet.class), "/");
+
+        context.setAttribute("fallout", plugin);
+
+        String voteReward = plugin.getConfig().getString("votereward", "a hug from amp");
+        context.setAttribute("votereward", voteReward);
     }
 
     public void start() {
@@ -93,6 +98,10 @@ public class ServerManager {
 
     public boolean isRunning() {
         return this.server.isRunning();
+    }
+
+    public void setAttribute(String name, Object value) {
+        ((WebAppContext) server.getHandler()).setAttribute(name, value);
     }
 
 }
