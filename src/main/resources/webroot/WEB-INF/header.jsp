@@ -28,7 +28,7 @@
                     <li class="divider"></li>
                     <li><a href="https://thebigdigmc.info/">Forums</a></li>
                     <li class="divider"></li>
-                    <li><a href="http://fallout.thebigdigmc.info:8123/">Webmap</a></li>
+                    <li><a href="${pageContext.request.contextPath}/webmap.jsp">Webmap</a></li>
                     <li class="divider"></li>
                     <li>
                         <form class="has-form" action="${pageContext.request.contextPath}/profile.jsp" method="get">

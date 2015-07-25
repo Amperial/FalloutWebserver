@@ -63,8 +63,6 @@
                 <br><br>
             </div>
             <br>
-            </div>
-            <br>
         </div>
     </div>
     <br>

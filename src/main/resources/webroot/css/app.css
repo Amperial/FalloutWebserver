@@ -6,7 +6,8 @@ body, .button {
     font-family: 'Open Sans', arial, helvetica, sans-serif;
 }
 body {
-    background: url("../img/pattern_background.png") repeat fixed;
+    background: url("../img/background_1.png") no-repeat center center fixed;
+    background-size: cover;
     font-size: 14px;
 }
 .row, .contain-to-grid.sticky .top-bar {
@@ -41,7 +42,7 @@ body, hr, .strike, .tabs .tab-title > a, h1, h2, h3, h4, h5 {
 }
 
 .content-main {
-    background: #333333;
+    background: rgba(51, 51, 51, 0.8);
 }
 .content-inner {
     background: url("../img/pattern_content.jpg") repeat fixed;
