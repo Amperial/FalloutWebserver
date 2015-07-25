@@ -14,6 +14,9 @@
 </head>
 <body>
 <div id="wrapper">
+    <br>
+
+    <!--
     <ul data-orbit>
         <li><img src="img/banner_home_1.png"></li>
         <li><img src="img/banner_home_2.png"></li>
@@ -23,6 +26,7 @@
         <li><img src="img/banner_home_6.png"></li>
     </ul>
     <br>
+    -->
 
     <%@include file="WEB-INF/header.jsp"%>
 

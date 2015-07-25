@@ -28,12 +28,18 @@
     
             <div class="small-12 small-centered columns content-inner">
                 <br>
-                <h4 class="lore-date subheader">Lore</h4>
+                <h4 class="wikiheader">Characters</h4>
+                <ul class="circle">
+                    <li><a href="characters/alignments.jsp">Alignments</a></li>
+                    <li><a href="characters/races.jsp">Races</a></li>
+                </ul>
+                <br>
+                <h4 class="wikiheader">Lore</h4>
                 <ul class="circle">
                     <li><a href="lore.jsp">Main Lore</a></li>
                 </ul>
                 <br>
-                <h4 class="lore-date subheader">NRS</h4>
+                <h4 class="wikiheader">NRS</h4>
                 <ul class="circle">
                     <li>SPECIAL</li>
                     <li>Skills</li>
@@ -42,7 +48,7 @@
                     <li>Combat</li>
                 </ul>
                 <br>
-                <h4 class="lore-date subheader">Locking System</h4>
+                <h4 class="wikiheader">Locking System</h4>
                 <ul class="circle">
                     <li>Doors, Chests, and Trapdoors</li>
                     <li>Terminals</li>

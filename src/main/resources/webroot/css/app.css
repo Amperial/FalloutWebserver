@@ -129,9 +129,13 @@ button:hover, .button:hover {
     background-color: #007095
 }
 
-/* Lore page date colors */
-.lore-date {
+/* Wiki page header */
+.wikiheader {
+    line-height: 1.4;
     color: #008CBA;
+    font-weight: normal;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
 }
 
 span.text-circle {

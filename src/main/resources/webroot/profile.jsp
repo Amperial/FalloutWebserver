@@ -2,13 +2,10 @@
 <%@ page import="ninja.amp.fallout.character.Character" %>
 <%@ page import="ninja.amp.fallout.character.CharacterManager" %>
 <%@ page import="ninja.amp.fallout.character.Perk" %>
-<%@ page import="ninja.amp.fallout.config.FOConfig" %>
-<%@ page import="org.bukkit.configuration.file.FileConfiguration" %>
 <%@ page import="ninja.amp.fallout.command.commands.character.knowledge.Information" %>
 <%@ page import="ninja.amp.fallout.character.Special" %>
 <%@ page import="ninja.amp.fallout.character.Trait" %>
 <%@ page import="ninja.amp.fallout.character.Skill" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -41,14 +38,11 @@
 
                         String characterName = request.getParameter("character");
                         if (characterName != null && !characterName.isEmpty() && characterManager.isCharacter(characterName)) {
-                            Character character = characterManager.getCharacterByName(characterName);
-                            if (character == null) {
-                                FileConfiguration characterConfig = fallout.getConfigManager().getConfig(FOConfig.CHARACTER);
-                                try {
-                                    character = new Character(characterConfig.getConfigurationSection(characterName.toLowerCase()));
-                                } catch (Exception e) {
-                                    fallout.getMessenger().debug(e);
-                                }
+                            Character character;
+                            if (characterManager.isLoaded(characterName)) {
+                                character = characterManager.getCharacterByName(characterName);
+                            } else {
+                                character = characterManager.loadOfflineCharacter(characterName);
                             }
                             if (character == null) {
                     %>

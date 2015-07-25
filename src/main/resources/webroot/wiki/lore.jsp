@@ -28,20 +28,19 @@
             <h3>Lore Pre-Start of Map</h3>
     
             <div class="small-12 small-centered columns content-inner">
-                <br>
-                <h4 class="lore-date subheader">2077</h4>
+                <br><h4 class="wikiheader">2077</h4>
                 <ul class="circle">
                     <li>March 21 - The Doors to Vault 79 close. Everyone left outside the vault were believed to have Perished by the nuclear war heads.</li>
                     <li>October 20 - Captain Roger Maxson, now in control of Mariposa, declares himself to be in full desertion from the army (via radio)... and receives no reply.</li>
                     <li>November 1 - Captain Maxson, his men, and their families, arrive at the Lost Hills bunker a few weeks later, suffering many casualties along the way,
                         including Maxson's wife (but not his teenage son). The surviving soldiers go on to become the Brotherhood of Steel. (Brotherhood Of Steel is Created)</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2134</h4>
+                <br><h4 class="wikiheader">2134</h4>
                 <ul class="circle">
                     <li>Elder Roger Maxson dies of cancer, and his son, already an accomplished soldier,
                         takes up the role of "General" (Elder) within the Brotherhood of Steel. (John Maxson becomes Brotherhood leader)</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2155</h4>
+                <br><h4 class="wikiheader">2155</h4>
                 <ul class="circle">
                     <li>The Paladins, now led by Rhombus, begin a full scale campaign against the Vipers,
                         tracking them down and wiping out almost all of their members within the span of a month.
@@ -49,20 +48,20 @@
                     <li>Due to the campaign to wipe out the vipers, BoS squads are sent to Michigan. The squads don't find any vipers,
                         but instead setup in the Michigan area keeping contact with the main BoS.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2170</h4>
+                <br><h4 class="wikiheader">2170</h4>
                 <ul class="circle">
                     <li>Vault 79 opens meeting the brotherhood established in the area.</li>
                     <li>The Dwellers of vault 79 are completely removed from the
                         vault by the BoS in an attempt to take the vault as their own.
                         Vault 79 descendants spread out throughout the Michigan area.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2172</h4>
+                <br><h4 class="wikiheader">2172</h4>
                 <ul class="circle">
                     <li>Ericius (one of the descendants from vault 79) takes refuge in an abandoned factory.</li>
                     <li>Matheson founds 'The Followers', helping sick wastelanders get better.</li>
                     <li>Matheson begins his search for sapling DNA.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2173</h4>
+                <br><h4 class="wikiheader">2173</h4>
                 <ul class="circle">
                     <li>War breaks out between the The Followers and local raiders called 'The League of Ordinary Gentleman'
                         established in a facility on the border of Ohio and Michigan.</li>
@@ -70,7 +69,7 @@
                     <li>The factory becomes Ericius Enterprise Headquarters.</li>
                     <li>BoS finishes turning Vault 79 into a fort.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2174</h4>
+                <br><h4 class="wikiheader">2174</h4>
                 <ul class="circle">
                     <li>The Followers successfully win their war with The League of Ordinary Gentleman,
                         Matheson obtaining the sapling DNA he was looking for.</li>
@@ -79,14 +78,14 @@
                         BoS take most of their supplies with them.</li>
                     <li>10 days later, The BoS retake control of their fort..</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2175</h4>
+                <br><h4 class="wikiheader">2175</h4>
                 <ul class="circle">
                     <li>Rumors go around of flying machines seen going across the sky. (The BoS investigates)</li>
                     <li>Mr. Ericius becomes richest man in Michigan.</li>
                     <li>BoS receive T-51b power armor from the lost hills BoS headquarters.</li>
                     <li>A village near the Detroit ruins begins to grow. The Village gets the name Detroit Ruins.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2176</h4>
+                <br><h4 class="wikiheader">2176</h4>
                 <ul class="circle">
                     <li>Detroit Ruins helps the BoS stop the ghoul attacks, in return they are awarded with 3 wind turbines.</li>
                     <li>Flying machines are confirmed by the BoS in lost hills, lost hills scribe says they are
@@ -99,7 +98,7 @@
             <h3>Lore Post-Start of Map</h3>
     
             <div class="small-12 small-centered columns content-inner">
-                <br><h4 class="lore-date subheader">2177</h4>
+                <br><h4 class="wikiheader">2177</h4>
                 <ul class="circle">
                     <li>Enclave sets up a Citizenship Program, and Patrols, making themselves more noticeable.</li>
                     <li>The Raiders continue disrupting life in Lansing.</li>
@@ -107,7 +106,7 @@
                     <li>A tree grows up and out of the tower of the Van Buren Medical Center, The Followers' base.</li>
                     <li>The tree burns, and somewhat cripples the tower...</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2178</h4>
+                <br><h4 class="wikiheader">2178</h4>
                 <ul class="circle">
                     <li>The Raiders die off a bit, only 2 members are left and disappear under other factions flags.</li>
                     <li>The faction 'Survivalists' emerges, setting up in houses next to the construction crane.</li>
@@ -115,7 +114,7 @@
                     <li>Brotherhood Elder Wotnoske returns, and the old one ends up leaving BoS joining 'Survivalists'.</li>
                     <li>Enclave makes themselves more noticeable than the previous year, deaths resulted by them occur.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2179</h4>
+                <br><h4 class="wikiheader">2179</h4>
                 <ul class="circle">
                     <li>A few months of peace between The Followers, Brotherhood, Enclave, and Survivalists take place.</li>
                     <li>Fights against BoS and Enclave Begin from Survivalists trying to stop forced merging, and harassment.</li>
@@ -125,7 +124,7 @@
                     <li>Brotherhood Elder Wotnoske returns to Lost Hills, sending in a new one 'Elder Michael Smith'.</li>
                     <li>Brotherhood Elder Smith sets up Traditional Protocols, though keeping enlisting techniques of recruiting wasters.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2180</h4>
+                <br><h4 class="wikiheader">2180</h4>
                 <ul class="circle">
                     <li>Survivalists take over a Prison, after burning their old base in Lansing.</li>
                     <li>BoS Elder Jake Wotnoske returns meeting Elder Smith, and Wotnoske is Demoted to Head-Paladin.</li>
@@ -143,7 +142,7 @@
                     <li>Matt leaves, stealing Enclave gear.</li>
                     <li>Enclave takes back base, sending in General Eden.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2181</h4>
+                <br><h4 class="wikiheader">2181</h4>
                 <ul class="circle">
                     <li>Matt Returns with his vaults 'Red Vipers'.</li>
                     <li>Matt disappears, and Red Vipers is renamed to Faelchon under Katrina Riordans control.</li>
@@ -193,7 +192,7 @@
                         The Sonne tribe in memorial of the previous leader.</li>
                     <li>Many remnants of the NMR join up, including Oli Constantine.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2182</h4>
+                <br><h4 class="wikiheader">2182</h4>
                 <ul class="circle">
                     <li>The Sonne tribe starts to build up in the ruins of Calco.</li>
                     <li>The last NMR casualty is buried within The Sonne Tribes walls.</li>
@@ -205,7 +204,7 @@
                     <li>Johnny Reckless, son of Jacob, takes back the abandoned prison
                         with a mysterious woman, after a year of emptiness.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2183</h4>
+                <br><h4 class="wikiheader">2183</h4>
                 <ul class="circle">
                     <li>David Rowdy returns from his trip, bearing information of the 'Lost City of the wastes'
                         giving it to Oli after he wins it, only to leave as soon as he came.</li>
@@ -227,7 +226,7 @@
                     <li>The Brotherhood sets up a forward ops base, with Diane Williams.</li>
                     <li>Matt returns, with a couple Vault 7 guards, and sets up Rebirth.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2184</h4>
+                <br><h4 class="wikiheader">2184</h4>
                 <ul class="circle">
                     <li>Random attacks come upon Rebirth, causing a strain on factory usage.</li>
                     <li>BoS troops start confiscating tech from Wastelanders.</li>
@@ -248,7 +247,7 @@
                     <li>After a unexpected murder, the culprit is found out to be a crazed man running the bar in the boat.</li>
                     <li>David Kennedy leaves the Wasteland, and gives his wealth and Caravan to Diane Williams.</li>
                 </ul>
-                <br><h4 class="lore-date subheader">2185</h4>
+                <br><h4 class="wikiheader">2185</h4>
                 <ul class="circle">
                     <li>Diane Williams runs a new merchant faction in the wastes.</li>
                     <li>Vault 52 is populated with V7 citizens.</li>
