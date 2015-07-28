@@ -116,6 +116,36 @@
                     </execution>
                 </executions>
             </plugin>
+            <!-- css/js minify plugin -->
+            <plugin>
+                <groupId>com.samaxes.maven</groupId>
+                <artifactId>minify-maven-plugin</artifactId>
+                <version>1.7.4</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>minify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <webappSourceDir>${basedir}/src/main/resources/webroot</webappSourceDir>
+                    <webappTargetDir>${project.build.directory}/classes/webroot</webappTargetDir>
+                    <charset>UTF-8</charset>
+                    <cssSourceFiles>
+                        <cssSourceFile>normalize.css</cssSourceFile>
+                        <cssSourceFile>foundation.min.css</cssSourceFile>
+                        <cssSourceFile>app.css</cssSourceFile>
+                    </cssSourceFiles>
+                    <jsSourceFiles>
+                        <jsSourceFile>vendor/jquery.js</jsSourceFile>
+                        <jsSourceFile>jquery.cookie.js</jsSourceFile>
+                        <jsSourceFile>foundation.min.js</jsSourceFile>
+                    </jsSourceFiles>
+                    <jsEngine>CLOSURE</jsEngine>
+                </configuration>
+            </plugin>
             <!-- License header plugin -->
             <plugin>
                 <groupId>com.mycila.maven-license-plugin</groupId>

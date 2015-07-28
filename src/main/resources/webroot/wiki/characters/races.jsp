@@ -6,9 +6,7 @@
 
     <title>Fallout Wasteland Legends: Wiki</title>
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/foundation.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/app.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.min.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
 
     <script src="${pageContext.request.contextPath}/js/vendor/modernizr.js"></script>
@@ -60,9 +58,7 @@
 
 <%@include file="../../WEB-INF/footer.jsp" %>
 
-<script src="${pageContext.request.contextPath}/js/vendor/jquery.js"></script>
-<script src="${pageContext.request.contextPath}/js/foundation.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/jquery.cookie.js"></script>
+<script src="${pageContext.request.contextPath}/js/script.min.js"></script>
 <script>
     $(document).foundation();
 
