@@ -19,6 +19,10 @@
 package ninja.amp.falloutwebserver.server;
 
 import ninja.amp.falloutwebserver.FalloutWebserver;
+import ninja.amp.falloutwebserver.server.servlet.CharactersServlet;
+import ninja.amp.falloutwebserver.server.servlet.PlayerlistServlet;
+import ninja.amp.falloutwebserver.server.servlet.ProfileServlet;
+import ninja.amp.falloutwebserver.server.servlet.VoteAlertServlet;
 import org.apache.tomcat.InstanceManager;
 import org.apache.tomcat.SimpleInstanceManager;
 import org.eclipse.jetty.annotations.ServletContainerInitializersStarter;
@@ -26,6 +30,7 @@ import org.eclipse.jetty.apache.jsp.JettyJasperInitializer;
 import org.eclipse.jetty.plus.annotation.ContainerInitializer;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.DefaultServlet;
+import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.util.log.Log;
 import org.eclipse.jetty.webapp.WebAppContext;
@@ -38,7 +43,7 @@ import java.util.List;
 public class ServerManager {
 
     private Server server;
-    
+
     public ServerManager(FalloutWebserver plugin) {
         Log.setLog(new JettyNullLogger());
 
@@ -46,7 +51,6 @@ public class ServerManager {
         this.server = new Server(port);
 
         System.setProperty("org.apache.jasper.compiler.disablejsr199", "false");
-        System.setProperty("java.net.preferIPv4Stack", "true");
 
         WebAppContext context = new WebAppContext();
         context.setContextPath("/");
@@ -69,8 +73,12 @@ public class ServerManager {
         context.setClassLoader(jspClassLoader);
 
         context.addServlet(new ServletHolder("default", DefaultServlet.class), "/");
+        context.addServlet(new ServletHolder("playerlist", new PlayerlistServlet(plugin)), "/playerlist");
+        context.addServlet(new ServletHolder("votealert", new VoteAlertServlet(plugin)), "/votealert");
+        context.addServlet(new ServletHolder("characters", new CharactersServlet(plugin)), "/wiki/characters");
+        context.addServlet(new ServletHolder("profile", new ProfileServlet(plugin)), "/profile");
 
-        context.setAttribute("fallout", plugin);
+        context.addFilter(new FilterHolder(JspFilter.class), "/*", null);
 
         String voteReward = plugin.getConfig().getString("votereward", "a hug from amp");
         context.setAttribute("votereward", voteReward);
@@ -98,10 +106,6 @@ public class ServerManager {
 
     public boolean isRunning() {
         return this.server.isRunning();
-    }
-
-    public void setAttribute(String name, Object value) {
-        ((WebAppContext) server.getHandler()).setAttribute(name, value);
     }
 
 }

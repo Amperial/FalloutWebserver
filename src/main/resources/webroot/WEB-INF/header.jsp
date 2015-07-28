@@ -3,16 +3,16 @@
         <nav class="top-bar" data-topbar role="navigation">
             <ul class="title-area">
                 <li class="name">
-                    <h1><a href="${pageContext.request.contextPath}/index.jsp">Fallout: Wasteland Legends</a></h1>
+                    <h1><a href="${pageContext.request.contextPath}/">Fallout: Wasteland Legends</a></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
             </ul>
             <section class="top-bar-section">
                 <ul class="right">
                     <li class="divider"></li>
-                    <li><a href="${pageContext.request.contextPath}/apply.jsp">Apply!</a></li>
+                    <li><a href="${pageContext.request.contextPath}/apply">Apply!</a></li>
                     <li class="divider"></li>
-                    <li><a href="${pageContext.request.contextPath}/rules.jsp">Rules</a></li>
+                    <li><a href="${pageContext.request.contextPath}/rules">Rules</a></li>
                     <li class="divider"></li>
                     <li class="has-dropdown"><a href="#">Vote</a>
                         <ul class="dropdown">
@@ -24,14 +24,14 @@
                         </ul>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="${pageContext.request.contextPath}/wiki/wiki.jsp">Wiki</a></li>
+                    <li><a href="${pageContext.request.contextPath}/wiki">Wiki</a></li>
                     <li class="divider"></li>
                     <li><a href="https://thebigdigmc.info/">Forums</a></li>
                     <li class="divider"></li>
-                    <li><a href="${pageContext.request.contextPath}/webmap.jsp">Webmap</a></li>
+                    <li><a href="${pageContext.request.contextPath}/webmap">Webmap</a></li>
                     <li class="divider"></li>
                     <li>
-                        <form class="has-form" action="${pageContext.request.contextPath}/profile.jsp" method="get">
+                        <form class="has-form" action="${pageContext.request.contextPath}/profile" method="get">
                             <div class="row collapse">
                                 <div class="large-8 small-9 columns">
                                     <input type="text" name="character" placeholder="Find Character" required pattern="([A-Za-z]+_)?[A-Za-z]+" maxlength="20"

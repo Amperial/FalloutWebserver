@@ -32,11 +32,10 @@ public class SetVoteReward extends Command {
 
     @Override
     public void execute(String command, CommandSender sender, List<String> args) {
-        
+
         String voteReward = StringUtils.join(args, " ");
         plugin.getConfig().set("votereward", voteReward);
         plugin.saveConfig();
-        plugin.getServerManager().setAttribute("votereward", voteReward);
 
         fallout.getMessenger().sendMessage(sender, FOWSMessage.VOTEREWARD_SET, voteReward);
     }

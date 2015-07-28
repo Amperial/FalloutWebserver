@@ -1,23 +1,20 @@
-<%@ page import="ninja.amp.fallout.FalloutCore" %>
-<%@ page import="ninja.amp.fallout.character.Character" %>
-<%@ page import="ninja.amp.fallout.character.CharacterManager" %>
-<%@ page import="ninja.amp.fallout.character.Perk" %>
-<%@ page import="ninja.amp.fallout.command.commands.character.knowledge.Information" %>
-<%@ page import="ninja.amp.fallout.character.Special" %>
-<%@ page import="ninja.amp.fallout.character.Trait" %>
-<%@ page import="ninja.amp.fallout.character.Skill" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Fallout Wasteland Legends: ${param["character"]}</title>
-    <link rel="shortcut icon" href="img/favicon.ico">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/foundation.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/app.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
-    <script src="js/vendor/modernizr.js"></script>
+
+    <script src="${pageContext.request.contextPath}/js/vendor/modernizr.js"></script>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/favicon.ico">
 </head>
 <body>
 <div id="wrapper">
@@ -29,183 +26,118 @@
         <br>
 
         <div class="small-12 small-centered columns">
+            <div id="vote-alert" style="display: none">
+                <jsp:include page="/votealert"/>
+            </div>
             <div class="small-12 small-centered columns content-inner">
-                <div class="small-10 small-centered columns" style="font-size: 16px">
+                <div class="small-12 medium-11 large-10 small-centered columns" style="font-size: 16px">
                     <br>
-                    <%
-                        FalloutCore fallout = (FalloutCore) application.getAttribute("fallout");
-                        CharacterManager characterManager = fallout.getCharacterManager();
-
-                        String characterName = request.getParameter("character");
-                        if (characterName != null && !characterName.isEmpty() && characterManager.isCharacter(characterName)) {
-                            Character character;
-                            if (characterManager.isLoaded(characterName)) {
-                                character = characterManager.getCharacterByName(characterName);
-                            } else {
-                                character = characterManager.loadOfflineCharacter(characterName);
-                            }
-                            if (character == null) {
-                    %>
-                    Error loading character!
-                    <%
-                    } else {
-                        characterName = character.getCharacterName().replace('_', ' ');
-                        String ownerName = character.getOwnerName();
-                        if (ownerName == null) {
-                            ownerName = "char";
-                        }
-                    %>
-                    <h3 class="text-center"><%= characterName %></h3>
-                    <hr/>
-                    <h4 class="text-center"><%= character.getOwnerName() == null ? "abandoned" : ownerName %></h4>
-                    <br>
-                    <ul class="small-block-grid-6 small-centered text-center">
-                        <li>
-                            Gender:<br>
-                            <%= character.getGender() == ninja.amp.fallout.character.Character.Gender.MALE ? "Male" : "Female" %>
-                        </li>
-                        <li>
-                            Race:<br>
-                            <%= character.getRace().getName() %>
-                        </li>
-                        <li>
-                            Alignment:<br>
-                            <%= character.getAlignment().getName() %>
-                        </li>
-                        <li>
-                            Age:<br>
-                            <%= character.getAge() %>
-                        </li>
-                        <li>
-                            Height:<br>
-                            <%= character.getHeight() %>
-                        </li>
-                        <li>
-                            Weight:<br>
-                            <%= character.getWeight() %>
-                        </li>
-                    </ul>
-                    <br>
-
-                    <ul class="small-block-grid-3 small-centered text-center">
-                        <li>
-                            Level: <%= character.getLevel() %><br><br>
-                            Perks:<br>
-                            <ul class="circle">
-                                <%
-                                    for (Perk perk : character.getPerks()) {
-                                %>
-                                <li>Tier <%= perk.getTier() %>: <%= perk.getName() %></li>
-                                <%
-                                    }
-                                %>
+                    <c:choose>
+                        <c:when test="${not empty characterName}">
+                            <h3 class="text-center">${characterName}</h3>
+                            <hr/>
+                            <h4 class="text-center">${ownerName}</h4>
+                            <br>
+                            <ul class="small-block-grid-6 small-centered text-center">
+                                <li>Gender:<br>${gender}</li>
+                                <li>Race:<br>${race}</li>
+                                <li>Alignment:<br>${alignment}</li>
+                                <li>Age:<br>${age}</li>
+                                <li>Height:<br>${height}</li>
+                                <li>Weight:<br>${weight}</li>
                             </ul>
-                        </li>
-                        <li>
-                            <img class="image-center" src="https://minotar.net/body/<%= ownerName %>/100" title="<%= ownerName %>">
-                        </li>
-                        <li>
-                            Faction: <%= character.getFaction() == null ? "No Allegiance" : character.getFaction() %><br><br>
-                            Knowledge:<br>
-                            <ul class="circle">
-                                <%
-                                    for (String information : Information.getInformationPieces()) {
-                                        if (character.hasKnowledge(information)) {
-                                %>
-                                <li><%= information %></li>
-                                <%
-                                        }
-                                    }
-                                %>
+                            <br>
+
+                            <ul class="small-block-grid-3 small-centered text-center">
+                                <li>
+                                    Level: ${level}<br><br>
+                                    Perks:<br>
+                                    <ul class="circle">
+                                        <c:forEach items="${perks}" var="perk">
+                                            <li>${perk}</li>
+                                        </c:forEach>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <img class="image-center" src="http://cravatar.eu/3d/${avatarName}/200">
+                                </li>
+                                <li>
+                                    Faction: ${faction}<br><br>
+                                    Knowledge:<br>
+                                    <ul class="circle">
+                                        <c:forEach items="${knowledge}" var="information">
+                                            <li>${information}</li>
+                                        </c:forEach>
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>
-                    </ul>
 
-                    <h4 class="text-center">SPECIAL Traits</h4>
-                    <ul class="small-block-grid-7 small-centered text-center">
-                        <%
-                            Special special = character.getSpecial();
-                        %>
-                        <li>
-                            <span class="text-circle">S: <%= special.get(Trait.STRENGTH) %></span>
-                        </li>
-                        <li>
-                            <span class="text-circle">P: <%= special.get(Trait.PERCEPTION) %></span>
-                        </li>
-                        <li>
-                            <span class="text-circle">E: <%= special.get(Trait.ENDURANCE) %></span>
-                        </li>
-                        <li>
-                            <span class="text-circle">C: <%= special.get(Trait.CHARISMA) %></span>
-                        </li>
-                        <li>
-                            <span class="text-circle">I: <%= special.get(Trait.INTELLIGENCE) %></span>
-                        </li>
-                        <li>
-                            <span class="text-circle">A: <%= special.get(Trait.AGILITY) %></span>
-                        </li>
-                        <li>
-                            <span class="text-circle">L: <%= special.get(Trait.LUCK) %></span>
-                        </li>
-                    </ul>
+                            <h4 class="text-center">SPECIAL Traits</h4>
+                            <hr/>
+                            <ul class="small-block-grid-7 small-centered text-center">
+                                <li><span class="text-circle">S: ${strength}</span></li>
+                                <li><span class="text-circle">P: ${perception}</span></li>
+                                <li><span class="text-circle">E: ${endurance}</span></li>
+                                <li><span class="text-circle">C: ${charisma}</span></li>
+                                <li><span class="text-circle">I: ${intelligence}</span></li>
+                                <li><span class="text-circle">A: ${agility}</span></li>
+                                <li><span class="text-circle">L: ${luck}</span></li>
+                            </ul>
+                            <br>
 
-                    <h4 class="text-center">Skills</h4>
-                    <ul class="small-block-grid-7 small-centered text-center">
-                        <li>
-                            Big Guns<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.BIG_GUNS) %></span><br><br>
-                            Explosives<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.EXPLOSIVES) %></span>
-                        </li>
-                        <li>
-                            Conventional Guns<br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.CONVENTIONAL_GUNS) %></span><br><br>
-                            Unarmed<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.UNARMED) %></span>
-                        </li>
-                        <li>
-                            Energy Weapons<br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.ENERGY_WEAPONS) %></span><br><br>
-                            First Aid<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.FIRST_AID) %></span>
-                        </li>
-                        <li>
-                            Melee Weapons<br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.MELEE_WEAPONS) %></span><br><br>
-                            Surgery<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.SURGERY) %></span>
-                        </li>
-                        <li>
-                            Lockpicking<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.LOCKPICKING) %></span><br><br>
-                            Repair<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.REPAIR) %></span>
-                        </li>
-                        <li>
-                            Sneak<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.SNEAK) %></span><br><br>
-                            Science<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.SCIENCE) %></span>
-                        </li>
-                        <li>
-                            Speech<br><br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.SPEECH) %></span><br><br>
-                            Logical Thinking<br>
-                            <span class="text-circle"><%= character.skillLevel(Skill.LOGICAL_THINKING) %></span>
-                        </li>
-                    </ul>
-                    <hr/>
-                    <h4 class="text-center">Personality</h4><br>
-                    <br>
-                    <h4 class="text-center">Back Story</h4>
-                    <%
-                        }
-                    } else {
-                    %>
-                    Character does not exist!
-                    <%
-                        }
-                    %>
+                            <h4 class="text-center">Skills</h4>
+                            <hr/>
+                            <ul class="small-block-grid-7 small-centered text-center">
+                                <li>Big Guns</li>
+                                <li>Conventional Guns</li>
+                                <li>Energy Weapons</li>
+                                <li>Melee Weapons</li>
+                                <li>Lockpicking</li>
+                                <li>Sneak</li>
+                                <li>Speech</li>
+                            </ul>
+                            <ul class="small-block-grid-7 small-centered text-center">
+                                <li><span class="text-circle">${bigguns}</span></li>
+                                <li><span class="text-circle">${conventionalguns}</span></li>
+                                <li><span class="text-circle">${energyweapons}</span></li>
+                                <li><span class="text-circle">${meleeweapons}</span></li>
+                                <li><span class="text-circle">${lockpicking}</span></li>
+                                <li><span class="text-circle">${sneak}</span></li>
+                                <li><span class="text-circle">${speech}</span></li>
+                            </ul>
+                            <ul class="small-block-grid-7 small-centered text-center">
+                                <li>Explosives</li>
+                                <li>Unarmed</li>
+                                <li>First Aid</li>
+                                <li>Surgery</li>
+                                <li>Repair</li>
+                                <li>Science</li>
+                                <li>Logical Thinking</li>
+                            </ul>
+                            <ul class="small-block-grid-7 small-centered text-center">
+                                <li><span class="text-circle">${explosives}</span></li>
+                                <li><span class="text-circle">${unarmed}</span></li>
+                                <li><span class="text-circle">${firstaid}</span></li>
+                                <li><span class="text-circle">${surgery}</span></li>
+                                <li><span class="text-circle">${repair}</span></li>
+                                <li><span class="text-circle">${science}</span></li>
+                                <li><span class="text-circle">${logicalthinking}</span></li>
+                            </ul>
+                            <br>
+
+                            <h4 class="text-center">Personality</h4>
+                            <hr/>
+                            This is the player's personality, about one sentence long.<br>
+                            <br>
+
+                            <h4 class="text-center">Back Story</h4>
+                            <hr/>
+                            This is the player's backstory, about two paragraphs long.<br>
+                        </c:when>
+                        <c:otherwise>
+                            Character not found.
+                        </c:otherwise>
+                    </c:choose>
                 </div>
                 <br>
             </div>
@@ -219,10 +151,18 @@
 
 <%@include file="WEB-INF/footer.jsp" %>
 
-<script src="js/vendor/jquery.js"></script>
-<script src="js/foundation.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/vendor/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/js/foundation.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.cookie.js"></script>
 <script>
     $(document).foundation();
+
+    $(document).on('close.fndtn.alert', function (event) {
+        $.cookie('vote-alert', 'closed', { path: '/' });
+    });
+    if ($.cookie('vote-alert') !== 'closed') {
+        $('#vote-alert').show();
+    }
 </script>
 </body>
 </html>

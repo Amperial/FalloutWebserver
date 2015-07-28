@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -18,7 +20,7 @@
 <div id="wrapper">
     <br>
 
-    <%@include file="../../WEB-INF/header.jsp" %>
+    <%@include file="../WEB-INF/header.jsp" %>
 
     <div class="row content-main">
         <br>
@@ -29,26 +31,19 @@
             </div>
             <ul class="breadcrumbs">
                 <li><a href="${pageContext.request.contextPath}/wiki">Wiki</a></li>
-                <li><a href="${pageContext.request.contextPath}/wiki/characters">Characters</a></li>
-                <li class="current"><a href="#">Races</a></li>
+                <li class="current"><a href="#">Characters</a></li>
             </ul>
 
-            <h3>Character Races</h3>
+            <h3>Characters</h3>
 
             <div class="small-12 small-centered columns content-inner">
-                <br><h4 class="wikiheader">Wastelander</h4>
-                Life is rough outside of the secured facilities of Project Safehouse and technologically advanced factions.
-                But it's the life that most who call the american wasteland home now lead.
-                <br><h4 class="wikiheader">Ghoul</h4>
-                Many died of radiation poisoning when atomic fire spread across the land. An unlucky few hailed to heed the call of death,
-                and mutated into rotting abominations who now thrive on what should have killed them.
-                <br><h4 class="wikiheader">Super Mutant</h4>
-                Born of the Forced Evolutionary Virus, these hulking monstrosities of flesh
-                breed fear into all who call the american wasteland home, even if they don't intend it.
-                <br><h4 class="wikiheader">Vault Dweller</h4>
-                Some were spared from the wrath of the atom bomb unleashed in the Great War.
-                Behind the thick doors of vaults and within heavily secured facilities, remnant of the past still live on.
-                <br><br>
+                <br>
+                <ul class="circle">
+                    <c:forEach items="${characters}" var="character">
+                        <li><a href="${pageContext.request.contextPath}/profile?character=${character}">${character}</a></li>
+                    </c:forEach>
+                </ul>
+                <br>
             </div>
             <br>
         </div>
@@ -58,7 +53,7 @@
     <div class="clearfooter"></div>
 </div>
 
-<%@include file="../../WEB-INF/footer.jsp" %>
+<%@include file="../WEB-INF/footer.jsp" %>
 
 <script src="${pageContext.request.contextPath}/js/vendor/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/js/foundation.min.js"></script>

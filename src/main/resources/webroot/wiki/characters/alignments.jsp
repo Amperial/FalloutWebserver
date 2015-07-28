@@ -3,31 +3,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Fallout Wasteland Legends: Wiki</title>
-    <link rel="shortcut icon" href="../../img/favicon.ico">
-    <link rel="stylesheet" href="../../css/normalize.css">
-    <link rel="stylesheet" href="../../css/foundation.css">
-    <link rel="stylesheet" href="../../css/app.css">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/foundation.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/app.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
-    <script src="../../js/vendor/modernizr.js"></script>
+
+    <script src="${pageContext.request.contextPath}/js/vendor/modernizr.js"></script>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/favicon.ico">
 </head>
 <body>
 <div id="wrapper">
     <br>
 
-    <%@include file="../../WEB-INF/header.jsp"%>
+    <%@include file="../../WEB-INF/header.jsp" %>
 
     <div class="row content-main">
         <br>
+
         <div class="small-12 small-centered columns">
+            <div id="vote-alert" style="display: none">
+                <jsp:include page="/votealert"/>
+            </div>
             <ul class="breadcrumbs">
-                <li><a href="../wiki.jsp">Wiki</a></li>
-                <li class="unavailable"><a href="#">Characters</a></li>
+                <li><a href="${pageContext.request.contextPath}/wiki">Wiki</a></li>
+                <li><a href="${pageContext.request.contextPath}/wiki/characters">Characters</a></li>
                 <li class="current"><a href="#">Alignments</a></li>
             </ul>
 
             <h3>Character Alignments</h3>
-    
+
             <div class="small-12 small-centered columns content-inner">
                 <br><h4 class="subheader" style="color: lime">Lawful Good</h4>
                 A Lawful Good character typically acts with compassion, and always with honor and a sense of duty.
@@ -66,15 +73,24 @@
         </div>
     </div>
     <br>
+
     <div class="clearfooter"></div>
 </div>
 
-<%@include file="../../WEB-INF/footer.jsp"%>
+<%@include file="../../WEB-INF/footer.jsp" %>
 
-<script src="../../js/vendor/jquery.js"></script>
-<script src="../../js/foundation.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/vendor/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/js/foundation.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.cookie.js"></script>
 <script>
     $(document).foundation();
+
+    $(document).on('close.fndtn.alert', function (event) {
+        $.cookie('vote-alert', 'closed', { path: '/' });
+    });
+    if ($.cookie('vote-alert') !== 'closed') {
+        $('#vote-alert').show();
+    }
 </script>
 </body>
 </html>
