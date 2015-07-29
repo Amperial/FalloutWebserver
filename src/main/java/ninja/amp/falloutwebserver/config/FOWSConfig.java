@@ -26,7 +26,7 @@ import ninja.amp.fallout.config.Config;
  * @author Austin Payne
  */
 public enum FOWSConfig implements Config {
-    ;
+    TOKENS("Tokens.yml");
 
     private final String fileName;
 

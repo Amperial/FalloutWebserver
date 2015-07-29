@@ -29,10 +29,13 @@ import ninja.amp.fallout.faction.FactionManager;
 import ninja.amp.fallout.message.Messenger;
 import ninja.amp.falloutwebserver.command.AboutCommand;
 import ninja.amp.falloutwebserver.command.ReloadCommand;
+import ninja.amp.falloutwebserver.command.link.Login;
+import ninja.amp.falloutwebserver.command.link.Website;
 import ninja.amp.falloutwebserver.command.vote.SetVoteReward;
 import ninja.amp.falloutwebserver.command.vote.VoteReward;
 import ninja.amp.falloutwebserver.config.FOWSConfig;
 import ninja.amp.falloutwebserver.server.ServerManager;
+import ninja.amp.falloutwebserver.server.TokenManager;
 import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -48,6 +51,7 @@ import java.util.LinkedHashSet;
 public class FalloutWebserver extends JavaPlugin implements FalloutCore, Listener {
 
     private FalloutCore fallout;
+    private TokenManager tokenManager;
     private ServerManager serverManager;
 
     @Override
@@ -65,11 +69,16 @@ public class FalloutWebserver extends JavaPlugin implements FalloutCore, Listene
         CommandGroup falloutweb = new CommandGroup(this, "falloutwebserver")
                 .addChildCommand(new AboutCommand(this))
                 .addChildCommand(new ReloadCommand(this))
+                .addChildCommand(new Website(this))
+                .addChildCommand(new Login(this))
                 .addChildCommand(new VoteReward(this))
                 .addChildCommand(new SetVoteReward(this));
 
         // Add fallout webserver command tree to command controller
         fallout.getCommandController().addCommand(falloutweb);
+
+        // Create token manager
+        tokenManager = new TokenManager(this);
 
         // Create and start webserver
         serverManager = new ServerManager(this);
@@ -86,6 +95,7 @@ public class FalloutWebserver extends JavaPlugin implements FalloutCore, Listene
         }
         serverManager.stop();
         serverManager = null;
+        tokenManager = null;
         fallout = null;
     }
 
@@ -122,6 +132,10 @@ public class FalloutWebserver extends JavaPlugin implements FalloutCore, Listene
     @Override
     public FactionManager getFactionManager() {
         return fallout.getFactionManager();
+    }
+
+    public TokenManager getTokenManager() {
+        return tokenManager;
     }
 
     public ServerManager getServerManager() {

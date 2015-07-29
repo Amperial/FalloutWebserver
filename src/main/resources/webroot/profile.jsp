@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Fallout Wasteland Legends: ${param["character"]}</title>
+    <title>Fallout Wasteland Legends: ${characterName}</title>
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.min.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
