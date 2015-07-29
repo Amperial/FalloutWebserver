@@ -27,7 +27,18 @@
             </div>
             <div class="small-12 small-centered columns content-inner">
                 <br>
+                A role play skin is required.
+                <br><br>
                 Do not use your character's back story to give yourself powers, abilities, items, and things that are OP
+                <br><br>
+                Names do not need to be 50's Era. Your character should have a legitimate name. Permanent broad names are not allowed.
+                If your character's face is concealed by a mask or face covering helmet, then it would be allowed to have a name like Masked_Man.
+                Example: Someone named Mercenary would not be allowed because Mercenary is a title not a name.
+                Someone named Random_Guy would not be allowed because Random guy is not a real name for a person.
+                <br><br>
+                New players get a 24 hour grace period in which their character cannot be roleplay killed. This does not include new characters if you have already logged in as a player before.
+                <br><br>
+                Characters made for getting revenge on another character are not allowed. Most common revenge characters include a family such as a brother, son, or father.
                 <br><br>
             </div>
         </div>

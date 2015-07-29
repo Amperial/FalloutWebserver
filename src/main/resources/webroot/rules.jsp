@@ -71,16 +71,39 @@
                     <div class="small-3 columns"></div>
                     <div class="small-9 columns content-inner"><br>
                         <ul class="circle">
-                            <li>A roleplay rule.</li>
+                            <li><b>You HAVE to be moderated for roleplay actions that are significant such as building, breaking in, fighting etc.</b></li>
+                            <li>Staff have the power to overrule any roleplay situation if they believe it was not legitimate in any way shape or form.</li>
+                            <li><b>Do NOT meta game</b> roleplay information. Also known as breaking the fourth wall.
+                                <ul>
+                                    <li>Definition: Using OOC (Out of Character) information the character is unaware of for roleplay.</li>
+                                    <li>Example: Someone told you in global that Greg has a hidden chest under his bed, but in roleplay your character does not know.
+                                        Although your character does not know about the chest you decide to raid it anyway. This is not allowed.</li>
+                                </ul>
+                            </li>
+                            <li><b>Do NOT power game.</b>
+                                <ul>
+                                    <li>Definition: Using abilities in roleplay that your character wouldn't realistically be capable of.</li>
+                                    <li>Example: You are in a close quarters fight. Your character does not have a gun, but your opponent does.
+                                        Your character dodges every bullet and snaps the opponent's weapon in half. Yeah... nope.</li>
+                                </ul>
+                            </li>
+                            <li>Use common sense and real world logic when you are roleplaying.</li>
+                            <li>Respect your SPECIAL. Low-STR characters can't use heavy weapons, Low-INT characters have no idea how to write and in extreme cases even have trouble formulating sentences, etc.</li>
+                            <li>No RDM, killing a character for no reason is not allowed. Even if you're a raider.</li>
+                            <li>Do not harass players OOC or in real life for actions taken in roleplay.</li>
+                            <li>Scenes of graphic nature such as torture must have approval from both parties.</li>
+                            <li>ERP (Erotic Roleplay) is not allowed on the server.<br>
+                                Players who wish to participate in these actions must time skip or do so off of server chat.</li>
+                            <li>Remove roleplay description signs when they are no longer needed.</li>
+                            <li>Roleplaying with a device other than minecraft is not allowed. This does not mean you can't use them to chat with friends.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="content" id="stealingrules">
                     <div class="small-3 columns"></div>
                     <div class="small-9 columns content-inner"><br>
-                        This is how 2 steal duh lols:
                         <ul class="circle">
-                            <li>Robbing a player is only allowed if the player is online.</li>
+                            <li>Vandalizing or Robbing a player is only allowed if the player is online.</li>
                             <li>Players that have been offline for over a month can be robbed.</li>
                             <li>Faction community chests can be robbed if at least one faction member is online.</li>
                             <li>Joining a faction to steal their items is not allowed.</li>
@@ -89,8 +112,15 @@
                 </div>
                 <div class="content" id="consequences">
                     <div class="small-3 columns"></div>
-                    <div class="small-9 columns content-inner">
-                        <br>These are the consequences for breaking rules<br><br>
+                    <div class="small-9 columns content-inner"><br>
+                        <ul class="circle">
+                            <li>Language: Warning x3, Kick, 12hr Ban, 24hr Ban, 48hr Ban, Perm-Ban.</li>
+                            <li>Spamming: Warning x3, Kick, 48hr Ban, Perm-Ban.</li>
+                            <li>Harassment: Kick, 48hr Ban, 48hr Ban, Perm-Ban.</li>
+                            <li>Griefing: Kick, 24hr Ban, 48hr Ban, Perm-Ban.</li>
+                            <li>Intense Spam: Perm-Ban for guests. 48hr Ban, Perm-Ban.</li>
+                            <li>Hacking: Perm-Ban on sight.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
