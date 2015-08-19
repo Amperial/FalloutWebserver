@@ -20,7 +20,7 @@ package ninja.amp.falloutwebserver.command;
 
 import ninja.amp.fallout.FalloutCore;
 import ninja.amp.fallout.command.Command;
-import ninja.amp.falloutwebserver.message.FOWSMessage;
+import ninja.amp.fallout.message.FOMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
@@ -37,7 +37,7 @@ public class ReloadCommand extends Command {
 
     public ReloadCommand(FalloutCore fallout) {
         super(fallout, "reload");
-        setDescription("Reloads the fallout webserver plugin");
+        setDescription("Reloads the fallout webserver plugin.");
         setCommandUsage("/fow reload");
         setPermission(new Permission("falloutwebserver.reload", PermissionDefault.OP));
         setPlayerOnly(false);
@@ -47,7 +47,7 @@ public class ReloadCommand extends Command {
     public void execute(String command, CommandSender sender, List<String> args) {
         Bukkit.getPluginManager().disablePlugin(getPlugin());
         getPlugin().getPluginLoader().enablePlugin(getPlugin());
-        fallout.getMessenger().sendMessage(sender, FOWSMessage.RELOAD, getPlugin().getName());
+        fallout.getMessenger().sendMessage(sender, FOMessage.RELOAD, getPlugin().getName());
     }
 
 }

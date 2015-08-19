@@ -47,6 +47,7 @@
                         Remember, staff have the ultimate say in disputes and roleplay.<br>
                         <br>
                         <ul class="circle">
+                            <li>A roleplay skin is required.</li>
                             <li>Chat Rules
                                 <ul>
                                     <li>Use RP chat to talk in roleplay (/ch rp) and global chat for all other chat (/ch global).</li>
@@ -88,8 +89,12 @@
                                 </ul>
                             </li>
                             <li>Use common sense and real world logic when you are roleplaying.</li>
-                            <li>Respect your SPECIAL. Low-STR characters can't use heavy weapons, Low-INT characters have no idea how to write and in extreme cases even have trouble formulating sentences, etc.</li>
+                            <li>Respect your SPECIAL. Low-STR characters can't use heavy weapons, Low-INT characters
+                                have no idea how to write and in extreme cases even have trouble formulating sentences, etc.</li>
                             <li>No RDM, killing a character for no reason is not allowed. Even if you're a raider.</li>
+                            <li>New players get a 24 hour grace period in which their first character cannot be roleplay killed.</li>
+                            <li>Characters made for getting revenge on another character are not allowed.
+                                Most common revenge characters include a family such as a brother, son, or father.</li>
                             <li>Do not harass players OOC or in real life for actions taken in roleplay.</li>
                             <li>Scenes of graphic nature such as torture must have approval from both parties.</li>
                             <li>ERP (Erotic Roleplay) is not allowed on the server.<br>

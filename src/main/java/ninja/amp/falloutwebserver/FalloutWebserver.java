@@ -28,12 +28,11 @@ import ninja.amp.fallout.config.ConfigManager;
 import ninja.amp.fallout.faction.FactionManager;
 import ninja.amp.fallout.message.Messenger;
 import ninja.amp.falloutwebserver.command.AboutCommand;
+import ninja.amp.falloutwebserver.command.Admin;
+import ninja.amp.falloutwebserver.command.Link;
 import ninja.amp.falloutwebserver.command.ReloadCommand;
-import ninja.amp.falloutwebserver.command.link.Login;
-import ninja.amp.falloutwebserver.command.link.Website;
 import ninja.amp.falloutwebserver.command.vote.SetVoteReward;
 import ninja.amp.falloutwebserver.command.vote.VoteReward;
-import ninja.amp.falloutwebserver.config.FOWSConfig;
 import ninja.amp.falloutwebserver.server.ServerManager;
 import ninja.amp.falloutwebserver.server.TokenManager;
 import org.bukkit.Bukkit;
@@ -64,13 +63,14 @@ public class FalloutWebserver extends JavaPlugin implements FalloutCore, Listene
 
         saveDefaultConfig();
         fallout.getConfigManager().registerCustomConfigs(EnumSet.allOf(FOWSConfig.class), this);
+        fallout.getMessenger().registerMessages(EnumSet.allOf(FOWSMessage.class));
 
         // Create fallout webserver command tree
         CommandGroup falloutweb = new CommandGroup(this, "falloutwebserver")
                 .addChildCommand(new AboutCommand(this))
                 .addChildCommand(new ReloadCommand(this))
-                .addChildCommand(new Website(this))
-                .addChildCommand(new Login(this))
+                .addChildCommand(new Link(this))
+                .addChildCommand(new Admin(this))
                 .addChildCommand(new VoteReward(this))
                 .addChildCommand(new SetVoteReward(this));
 

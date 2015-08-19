@@ -20,7 +20,7 @@ package ninja.amp.falloutwebserver.command.vote;
 
 import ninja.amp.fallout.FalloutCore;
 import ninja.amp.fallout.command.Command;
-import ninja.amp.falloutwebserver.message.FOWSMessage;
+import ninja.amp.falloutwebserver.FOWSMessage;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;

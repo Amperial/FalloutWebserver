@@ -1,5 +1,5 @@
 name: FalloutWebserver
-version: 0.0
+version: 2.1
 description: Web server for the Fallout Bukkit plugin.
 author: ampayne2
 main: ninja.amp.falloutwebserver.FalloutWebserver

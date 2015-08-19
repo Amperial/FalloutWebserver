@@ -19,8 +19,8 @@
 package ninja.amp.falloutwebserver.command.vote;
 
 import ninja.amp.fallout.command.Command;
+import ninja.amp.falloutwebserver.FOWSMessage;
 import ninja.amp.falloutwebserver.FalloutWebserver;
-import ninja.amp.falloutwebserver.message.FOWSMessage;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;

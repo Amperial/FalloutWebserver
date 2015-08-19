@@ -19,6 +19,8 @@
 package ninja.amp.falloutwebserver.server;
 
 import ninja.amp.falloutwebserver.FalloutWebserver;
+import ninja.amp.falloutwebserver.server.servlet.AdminServlet;
+import ninja.amp.falloutwebserver.server.servlet.ApplyServlet;
 import ninja.amp.falloutwebserver.server.servlet.CharactersServlet;
 import ninja.amp.falloutwebserver.server.servlet.LoginServlet;
 import ninja.amp.falloutwebserver.server.servlet.PlayerlistServlet;
@@ -74,9 +76,11 @@ public class ServerManager {
         context.setClassLoader(jspClassLoader);
 
         context.addServlet(new ServletHolder("default", DefaultServlet.class), "/");
+        context.addServlet(new ServletHolder("login", new LoginServlet(plugin)), "/login");
+        context.addServlet(new ServletHolder("admin", new AdminServlet(plugin)), "/admin");
+        context.addServlet(new ServletHolder("apply", new ApplyServlet(plugin)), "/apply");
         context.addServlet(new ServletHolder("playerlist", new PlayerlistServlet(plugin)), "/playerlist");
         context.addServlet(new ServletHolder("votealert", new VoteAlertServlet(plugin)), "/votealert");
-        context.addServlet(new ServletHolder("login", new LoginServlet(plugin)), "/login");
         context.addServlet(new ServletHolder("characters", new CharactersServlet(plugin)), "/wiki/characters");
         context.addServlet(new ServletHolder("profile", new ProfileServlet(plugin)), "/profile");
 

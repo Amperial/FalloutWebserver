@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -12,6 +13,7 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans">
 
     <script src="${pageContext.request.contextPath}/js/vendor/modernizr.js"></script>
+    <script src="${pageContext.request.contextPath}/ckeditor/ckeditor.js"></script>
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/img/favicon.ico">
 </head>
 <body>
@@ -123,14 +125,38 @@
                             </ul>
                             <br>
 
-                            <h4 class="text-center">Personality</h4>
+                            <c:choose>
+                                <c:when test="${fn:toLowerCase(param.character) == loggedInAs}">
+                                    <h4 class="text-center">Personality <a id="editpersonality" href="#"><img src="${pageContext.request.contextPath}/img/edit.png"></a></h4>
+                                </c:when>
+                                <c:otherwise>
+                                    <h4 class="text-center">Personality</h4>
+                                </c:otherwise>
+                            </c:choose>
                             <hr/>
-                            This is the player's personality, about one sentence long.<br>
+                            <form method="post">
+                                <div id="personality">
+                                    ${personality}
+                                </div>
+                                <textarea name="personalityeditor" id="personalityeditor" style="display: none"></textarea>
+                            </form>
                             <br>
 
-                            <h4 class="text-center">Back Story</h4>
+                            <c:choose>
+                                <c:when test="${fn:toLowerCase(param.character) == loggedInAs}">
+                                    <h4 class="text-center">Back Story <a id="editbackstory" href="#"><img src="${pageContext.request.contextPath}/img/edit.png"></a></h4>
+                                </c:when>
+                                <c:otherwise>
+                                    <h4 class="text-center">Back Story</h4>
+                                </c:otherwise>
+                            </c:choose>
                             <hr/>
-                            This is the player's backstory, about two paragraphs long.<br>
+                            <form method="post">
+                                <div id="backstory">
+                                    ${backstory}
+                                </div>
+                                <textarea name="backstoryeditor" id="backstoryeditor" style="display: none"></textarea>
+                            </form>
                         </c:when>
                         <c:otherwise>
                             Character not found.
@@ -159,6 +185,28 @@
     if ($.cookie('vote-alert') !== 'closed') {
         $('#vote-alert').show();
     }
+
+    $('#editpersonality').click(function (event) {
+        $('#editpersonality').hide();
+        $('#editbackstory').hide();
+
+        $('#personalityeditor').html("${personality}").resize();
+        CKEDITOR.replace('personalityeditor');
+        $('#personality').html("");
+
+        event.preventDefault();
+    });
+
+    $('#editbackstory').click(function (event) {
+        $('#editpersonality').hide();
+        $('#editbackstory').hide();
+
+        $('#backstoryeditor').html("${backstory}").resize();
+        CKEDITOR.replace('backstoryeditor');
+        $('#backstory').html("");
+
+        event.preventDefault();
+    });
 </script>
 </body>
 </html>

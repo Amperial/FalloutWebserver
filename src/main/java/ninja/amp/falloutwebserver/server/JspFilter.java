@@ -50,7 +50,6 @@ public class JspFilter implements Filter {
         extensions.add(".eot");
 
         // Pages without a servlet
-        jspPages.add("/apply");
         jspPages.add("/rules");
         jspPages.add("/wiki");
         jspPages.add("/wiki/lore");

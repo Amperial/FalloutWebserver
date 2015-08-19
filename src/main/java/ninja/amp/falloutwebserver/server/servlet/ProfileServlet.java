@@ -26,7 +26,7 @@ import ninja.amp.fallout.character.Perk;
 import ninja.amp.fallout.character.Skill;
 import ninja.amp.fallout.character.Special;
 import ninja.amp.fallout.character.Trait;
-import ninja.amp.fallout.command.commands.character.knowledge.Information;
+import ninja.amp.fallout.character.Information;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -90,6 +90,9 @@ public class ProfileServlet extends HttpServlet {
             for (Perk perk : character.getPerks()) {
                 perks.add("Tier " + perk.getTier() + ": " + perk.getName());
             }
+            if (perks.isEmpty()) {
+                perks.add("No Perks");
+            }
             request.setAttribute("perks", perks);
 
             String faction = character.getFaction();
@@ -100,6 +103,9 @@ public class ProfileServlet extends HttpServlet {
                 if (character.hasKnowledge(information)) {
                     knowledge.add(information);
                 }
+            }
+            if (knowledge.isEmpty()) {
+                knowledge.add("No Knowledge");
             }
             request.setAttribute("knowledge", knowledge);
 
