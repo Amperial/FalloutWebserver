@@ -22,11 +22,14 @@ import ninja.amp.fallout.Fallout;
 import ninja.amp.fallout.FalloutCore;
 import ninja.amp.fallout.character.Character;
 import ninja.amp.fallout.character.CharacterManager;
+import ninja.amp.fallout.character.Information;
 import ninja.amp.fallout.character.Perk;
 import ninja.amp.fallout.character.Skill;
 import ninja.amp.fallout.character.Special;
 import ninja.amp.fallout.character.Trait;
-import ninja.amp.fallout.character.Information;
+import ninja.amp.fallout.config.ConfigAccessor;
+import ninja.amp.falloutwebserver.FOWSConfig;
+import org.bukkit.configuration.file.FileConfiguration;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -117,6 +120,10 @@ public class ProfileServlet extends HttpServlet {
             for (Skill skill : Skill.class.getEnumConstants()) {
                 request.setAttribute(skill.getName().toLowerCase(), character.skillLevel(skill));
             }
+            // TODO: USE APPLICATIONMANAGER
+            FileConfiguration applyConfig = fallout.getConfigManager().getConfig(FOWSConfig.APPLICATIONS);
+            request.setAttribute("backstory", applyConfig.getString("backstory"));
+            request.setAttribute("personality", applyConfig.getString("personality"));
         }
 
         request.getRequestDispatcher("/profile.jsp").forward(request, response);
@@ -124,6 +131,16 @@ public class ProfileServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO: check that the person is logged in as the character
+        // TODO: USE APPLICATIONMANAGER
+        ConfigAccessor applyConfig = fallout.getConfigManager().getConfigAccessor(FOWSConfig.APPLICATIONS);
+        if (request.getParameter("backstoryeditor") != null) {
+            applyConfig.getConfig().set("backstory", request.getParameter("backstoryeditor"));
+        }
+        if (request.getParameter("personalityeditor") != null) {
+            applyConfig.getConfig().set("personality", request.getParameter("personalityeditor"));
+        }
+        applyConfig.saveConfig();
         doGet(request, response);
     }
 

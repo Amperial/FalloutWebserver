@@ -28,6 +28,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
+/**
+ * 
+ */
 public class TokenManager {
 
     /**
@@ -37,10 +40,21 @@ public class TokenManager {
 
     private FalloutCore fallout;
 
+    /**
+     * 
+     * @param fallout
+     */
     public TokenManager(FalloutCore fallout) {
         this.fallout = fallout;
     }
 
+    /**
+     * Generates a secret token with the given key.
+     *
+     * @param key The key
+     * @return The token
+     * @throws NoSuchAlgorithmException
+     */
     public synchronized String generateToken(String key) throws NoSuchAlgorithmException {
         MessageDigest digest = MessageDigest.getInstance("MD5");
         SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
@@ -60,7 +74,14 @@ public class TokenManager {
         return token;
     }
 
-    public synchronized boolean removeIfCorrect(String key, String token) {
+    /**
+     * Checks if a given token is correct and not expired, and removes the token if it is correct or expired.
+     *
+     * @param key The key
+     * @param token The token
+     * @return {@code true} if the token is correct and not expired
+     */
+    public synchronized boolean checkToken(String key, String token) {
         ConfigAccessor tokenConfig = fallout.getConfigManager().getConfigAccessor(FOWSConfig.TOKENS);
         FileConfiguration tokenConfigFile = tokenConfig.getConfig();
 

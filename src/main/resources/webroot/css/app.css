@@ -1,5 +1,4 @@
 /* Page layout and colors */
-
 html {
     overflow-y: scroll;
 }
@@ -42,7 +41,7 @@ body {
     background: rgba(51, 51, 51, 0.8);
 }
 .content-inner {
-    background: url("../img/content_background.jpg") repeat fixed;
+    background: url("../img/content_background.png") repeat fixed;
 }
 .content-inner > ul {
     font-size: 14px;
@@ -63,7 +62,6 @@ body {
 }
 
 /* Fonts and text styles */
-
 body, .button {
     font-family: 'Open Sans', arial, helvetica, sans-serif;
 }

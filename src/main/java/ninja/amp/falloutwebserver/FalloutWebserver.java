@@ -134,10 +134,18 @@ public class FalloutWebserver extends JavaPlugin implements FalloutCore, Listene
         return fallout.getFactionManager();
     }
 
+    /**
+     * 
+     * @return
+     */
     public TokenManager getTokenManager() {
         return tokenManager;
     }
 
+    /**
+     * 
+     * @return
+     */
     public ServerManager getServerManager() {
         return serverManager;
     }

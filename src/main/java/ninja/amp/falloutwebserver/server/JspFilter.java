@@ -29,18 +29,20 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashSet;
 
+/**
+ * 
+ */
 public class JspFilter implements Filter {
-    HashSet<String> extensions = new HashSet<>();
-    HashSet<String> jspPages = new HashSet<>();
+
+    private HashSet<String> extensions = new HashSet<>();
+    private HashSet<String> jspPages = new HashSet<>();
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        // File extensions that won't be filtered
         extensions.add(".css");
         extensions.add(".js");
-        extensions.add(".img");
         extensions.add(".png");
-        extensions.add(".jpg");
-        extensions.add(".jpeg");
         extensions.add(".gif");
         extensions.add(".ico");
         extensions.add(".swf");

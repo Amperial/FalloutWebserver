@@ -43,10 +43,17 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ */
 public class ServerManager {
 
     private Server server;
 
+    /**
+     * 
+     * @param plugin
+     */
     public ServerManager(FalloutWebserver plugin) {
         Log.setLog(new JettyNullLogger());
 
@@ -90,6 +97,9 @@ public class ServerManager {
         context.setAttribute("votereward", voteReward);
     }
 
+    /**
+     * 
+     */
     public void start() {
         if (!this.server.isRunning()) {
             try {
@@ -100,6 +110,9 @@ public class ServerManager {
         }
     }
 
+    /**
+     * 
+     */
     public void stop() {
         if (this.server.isRunning()) {
             try {
@@ -110,6 +123,10 @@ public class ServerManager {
         }
     }
 
+    /**
+     * 
+     * @return
+     */
     public boolean isRunning() {
         return this.server.isRunning();
     }

@@ -30,6 +30,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * 
+ */
 public class AdminServlet extends HttpServlet {
 
     private FalloutWebserver plugin;
@@ -44,15 +47,16 @@ public class AdminServlet extends HttpServlet {
             TokenManager tokenManager = plugin.getTokenManager();
 
             String token = request.getParameter("token");
-            if (token != null && !token.isEmpty() && tokenManager.removeIfCorrect(TokenManager.ADMIN, token)) {
-                request.getSession().setAttribute("isAdmin", true);
-                response.sendRedirect("/admin");
+            if (token != null && !token.isEmpty() && tokenManager.checkToken(TokenManager.ADMIN, token)) {
+                request.getSession().setAttribute(TokenManager.ADMIN, true);
             }
+            response.sendRedirect("/admin");
         }
-        if (request.getSession().getAttribute("isAdmin") == null) {
+        if (request.getSession().getAttribute(TokenManager.ADMIN) == null) {
             response.sendRedirect("/");
         }
 
+        // TODO: Handle setting up attributes for applications etc.
         List<String> applications = new ArrayList<>();
         applications.add("application1");
         applications.add("application2");
@@ -60,7 +64,6 @@ public class AdminServlet extends HttpServlet {
         Collections.sort(applications);
         request.setAttribute("applications", applications);
 
-        // TODO: Handle setting up attributes for applications etc.
         request.getRequestDispatcher("/admin.jsp").forward(request, response);
     }
 

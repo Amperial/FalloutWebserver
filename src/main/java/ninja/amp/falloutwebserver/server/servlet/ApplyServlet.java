@@ -39,7 +39,6 @@ public class ApplyServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("get");
         FileConfiguration applyConfig = plugin.getConfigManager().getConfig(FOWSConfig.APPLICATIONS);
         if (applyConfig.contains("backstory")) {
             String backstory = applyConfig.getString("backstory");
@@ -52,12 +51,10 @@ public class ApplyServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("post");
-        System.out.println(request.getParameter("backstory"));
         ConfigAccessor applyConfig = plugin.getConfigManager().getConfigAccessor(FOWSConfig.APPLICATIONS);
         applyConfig.getConfig().set("backstory", request.getParameter("backstory"));
         applyConfig.saveConfig();
-        System.out.println("backstory saved");
+
         request.setAttribute("backstory", request.getParameter("backstory"));
         request.getRequestDispatcher("/apply.jsp").forward(request, response);
     }

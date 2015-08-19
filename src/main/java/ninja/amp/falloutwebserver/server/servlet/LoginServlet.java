@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
             if (characterName != null && !characterName.isEmpty() && characterManager.isCharacter(characterName)) {
                 characterName = characterName.toLowerCase();
                 String token = request.getParameter("token");
-                if (token != null && !token.isEmpty() && tokenManager.removeIfCorrect(characterName, token)) {
+                if (token != null && !token.isEmpty() && tokenManager.checkToken(characterName, token)) {
                     request.getSession().setAttribute("loggedInAs", characterName);
                 }
             }
